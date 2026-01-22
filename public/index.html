@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions Update Checker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Terms & Conditions Update Checker</h1>
+      <p class="subtitle">Track when terms and conditions pages are updated</p>
+    </header>
+
+    <!-- Add URL Form -->
+    <section class="add-section">
+      <form id="addForm" class="add-form">
+        <input 
+          type="url" 
+          id="urlInput" 
+          placeholder="Enter URL (e.g., https://example.com/terms)" 
+          required
+        >
+        <button type="submit" id="addButton" class="btn btn-primary">
+          Add URL
+        </button>
+      </form>
+      <div id="formError" class="error-message"></div>
+    </section>
+
+    <!-- Actions Section -->
+    <section class="actions-section">
+      <button id="refreshAllButton" class="btn btn-secondary">
+        Refresh All
+      </button>
+      <div id="lastRefresh" class="last-refresh"></div>
+    </section>
+
+    <!-- Terms Display -->
+    <section class="terms-section">
+      <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+      </div>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <p>No terms tracked yet. Add a URL to get started!</p>
+      </div>
+      <div id="termsContainer" class="terms-container"></div>
+    </section>
+  </div>
+
+  <!-- History Modal -->
+  <div id="historyModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Update History</h2>
+        <button id="closeModal" class="close-button">&times;</button>
+      </div>
+      <div class="modal-body" id="historyContent"></div>
+    </div>
+  </div>
+
+  <!-- Success Notification -->
+  <div id="successNotification" class="success-notification" style="display: none;"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
